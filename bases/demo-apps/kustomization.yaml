@@ -1,0 +1,4 @@
+resources:
+- ./resources/mysql.yaml
+- ./resources/backend.yaml
+- ./resources/frontend.yaml
