@@ -1,0 +1,7 @@
+namespace: external-dns
+
+resources:
+- ./resources/namespace.yaml
+- ./resources/rbac.yaml
+- ./resources/service-account.yaml
+- ./resources/deployment.yaml

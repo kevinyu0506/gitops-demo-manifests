@@ -1,0 +1,5 @@
+namespace: nginx-ingress
+
+resources:
+- ./resources/namespace.yaml
+- ./resources/ingress-nginx.yaml
