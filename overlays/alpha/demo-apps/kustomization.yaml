@@ -21,6 +21,7 @@ generatorOptions:
 
 resources:
 - ./resources/namespace.yaml
+- ./resources/ingress.yaml
 - ./storages/mysql-pvc.yaml
 
 images:
