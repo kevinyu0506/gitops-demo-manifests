@@ -30,4 +30,4 @@ images:
 - name: kevinyu0506/gitops-demo-backend
   newTag: "latest"
 - name: kevinyu0506/gitops-demo-frontend
-  newTag: "latest"
+  newTag: "alpha-0.0.4"
