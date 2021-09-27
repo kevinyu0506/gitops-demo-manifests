@@ -1,4 +1,4 @@
-namespace: gitops-demo-alpha
+namespace: gitops-demo-beta
 
 bases:
 - ../../../bases/demo-apps
@@ -12,6 +12,9 @@ configMapGenerator:
   - ./configurations/mysql-init.sql
 
 secretGenerator:
+- name: clouddns-dns01-solver-svc-acct
+  files:
+  - ./secrets/cert-admin-key.json
 - name: mysql-pass
   literals:
   - password=secure1234
@@ -23,6 +26,8 @@ resources:
 - ./resources/namespace.yaml
 - ./resources/ingress.yaml
 - ./storages/mysql-pvc.yaml
+- ./certs/certificate.yaml
+- ./certs/issuer.yaml
 
 images:
 - name: mysql/mysql-server
@@ -30,4 +35,4 @@ images:
 - name: kevinyu0506/gitops-demo-backend
   newTag: "0.0.2"
 - name: kevinyu0506/gitops-demo-frontend
-  newTag: "alpha-0.0.4"
+  newTag: "beta-0.0.2"
