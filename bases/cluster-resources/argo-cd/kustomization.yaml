@@ -1,0 +1,14 @@
+namespace: argocd
+
+resources:
+- ./certs/certificate.yaml
+- ./certs/issuer.yaml
+- ./resources/ingress.yaml
+
+secretGenerator:
+- name: clouddns-dns01-solver-svc-acct
+  files:
+  - ./secrets/cert-admin-key.json
+
+generatorOptions:
+ disableNameSuffixHash: true
