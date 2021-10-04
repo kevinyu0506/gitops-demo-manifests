@@ -12,9 +12,6 @@ configMapGenerator:
   - ./configurations/mysql-init.sql
 
 secretGenerator:
-- name: clouddns-dns01-solver-svc-acct
-  files:
-  - ./secrets/cert-admin-key.json
 - name: mysql-pass
   literals:
   - password=secure1234
