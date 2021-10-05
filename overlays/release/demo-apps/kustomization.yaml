@@ -1,0 +1,35 @@
+namespace: gitops-demo-release
+
+bases:
+- ../../../bases/demo-apps
+
+patchesStrategicMerge:
+- ./patches/mysql.yaml
+
+configMapGenerator:
+- name: mysql-initdb-configmap
+  files:
+  - ./configurations/mysql-init.sql
+
+secretGenerator:
+- name: mysql-pass
+  literals:
+  - password=secure1234
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+resources:
+- ./resources/namespace.yaml
+- ./resources/ingress.yaml
+- ./storages/mysql-pvc.yaml
+- ./certs/certificate.yaml
+- ./certs/issuer.yaml
+
+images:
+- name: mysql/mysql-server
+  newTag: "8.0"
+- name: kevinyu0506/gitops-demo-backend
+  newTag: "0.0.2"
+- name: kevinyu0506/gitops-demo-frontend
+  newTag: "beta-0.0.2"

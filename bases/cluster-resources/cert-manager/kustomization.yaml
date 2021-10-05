@@ -1,5 +1,0 @@
-namespace: cert-manager
-
-resources:
-- ./resources/namespace.yaml
-- ./resources/cert-manager.yaml
